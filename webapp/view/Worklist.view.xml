@@ -7,7 +7,19 @@
   xmlns:m="sap.m">
 
   <m:Page>
-    
+    <m:headerContent>
+      <m:Bar>
+        <m:contentLeft>
+          <m:Title id="titleWorklist" text="{i18n>appTitle}"/>
+        </m:contentLeft>
+        <m:contentRight>
+          <m:Input
+            id="filterInput"
+            placeholder=""
+            liveChange="onFilter" />
+        </m:contentRight>
+      </m:Bar>
+    </m:headerContent>
 
     <m:content>
       <Table
