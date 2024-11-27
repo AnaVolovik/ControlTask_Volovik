@@ -1,72 +1,59 @@
 <mvc:View
   controllerName="ControlTaskVolovik.ControlTaskVolovik.controller.Worklist"
-  xmlns="sap.m"
+  xmlns="sap.ui.table"
   xmlns:mvc="sap.ui.core.mvc"
-  xmlns:semantic="sap.f.semantic">
+  xmlns:u="sap.ui.unified"
+  xmlns:c="sap.ui.core"
+  xmlns:m="sap.m">
 
-  <semantic:SemanticPage
-    id="page"
-    headerPinnable="false"
-    toggleHeaderOnTitleClick="false">
+  <m:Page>
+    
 
-    <semantic:titleHeading>
-      <Title text="{i18n>worklistTitle}" />
-    </semantic:titleHeading>
-
-    <semantic:content>
+    <m:content>
       <Table
         id="table"
-        width="auto"
-        items="{
-          path: '/MaterialID',
-          sorter: {
-            path: 'ID',
-            descending: false
-          }
-        }"
-        noDataText="{worklistView>/tableNoDataText}"
-        busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-        growing="true"
-        growingScrollToLoad="true"
-        updateFinished="onUpdateFinished">
-
-        <headerToolbar>
-          <Toolbar>
-            <Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-            <ToolbarSpacer />
-            <SearchField
-              id="searchField"
-              tooltip="{i18n>worklistSearchTooltip}"
-              search="onSearch"
-              width="auto">
-            </SearchField>
-          </Toolbar>
-        </headerToolbar>
-
+        rows="{/zjblessons_base_Materials}"
+      >
         <columns>
-          <Column id="nameColumn">
-            <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+          <Column>
+            <m:Label id="MaterialID" text="{i18n>MaterialID}" />
+            <template>
+              <m:Text text="{MaterialID}" />
+            </template>
           </Column>
-          <Column id="unitNumberColumn" hAlign="End">
-            <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+          <Column>
+            <m:Label id="GroupID" text="{i18n>GroupID}" />
+            <template>
+              <m:Text text="{GroupID}" />
+            </template>
+          </Column>
+          <Column>
+            <m:Label id="GroupText" text="{i18n>GroupText}" />
+            <template>
+              <m:Text text="{GroupText}" />
+            </template>
+          </Column>
+          <Column>
+            <m:Label id="MaterialText" text="{i18n>MaterialText}" />
+            <template>
+              <m:Text text="{MaterialText}" />
+            </template>
+          </Column>
+          <Column>
+            <m:Label id="Created" text="{i18n>Created}" />
+            <template>
+              <m:Text text="{Created}" />
+            </template>
+          </Column>
+          <Column>
+            <m:Label id="CreatedBy" text="{i18n>CreatedBy}" />
+            <template>
+              <m:Text text="{CreatedBy}" />
+            </template>
           </Column>
         </columns>
-
-        <items>
-          <ColumnListItem
-            type="Navigation"
-            press="onPress">
-            <cells>
-              <ObjectIdentifier
-                title="{ID}"/>
-              <ObjectNumber
-                unit="{ID}"/>
-            </cells>
-          </ColumnListItem>
-        </items>
       </Table>
-    </semantic:content>
-
-  </semantic:SemanticPage>
+    </m:content>
+  </m:Page>
 
 </mvc:View>
