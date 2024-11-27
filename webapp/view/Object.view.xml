@@ -1,31 +1,31 @@
 <mvc:View
-	controllerName="ControlTaskVolovik.ControlTaskVolovik.controller.Object"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic">
+  controllerName="ControlTaskVolovik.ControlTaskVolovik.controller.Object"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:semantic="sap.f.semantic">
 
-	<semantic:SemanticPage
-		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false"
-		busy="{objectView>/busy}"
-		busyIndicatorDelay="{objectView>/delay}">
+  <semantic:SemanticPage
+    id="page"
+    headerPinnable="false"
+    toggleHeaderOnTitleClick="false"
+    busy="{objectView>/busy}"
+    busyIndicatorDelay="{objectView>/delay}">
 
-		<semantic:titleHeading>
-			<Title text="{ID}" />
-		</semantic:titleHeading>
+    <semantic:titleHeading>
+      <Title text="{ID}" />
+    </semantic:titleHeading>
 
-		<semantic:headerContent>
-			<ObjectNumber
-				numberUnit="{ID}"
-			/>
-		</semantic:headerContent>
+    <semantic:headerContent>
+      <ObjectNumber
+        numberUnit="{ID}"
+      />
+    </semantic:headerContent>
 
-		<semantic:sendEmailAction>
-			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
-		</semantic:sendEmailAction>
+    <semantic:sendEmailAction>
+      <semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+    </semantic:sendEmailAction>
 
 
-	</semantic:SemanticPage>
+  </semantic:SemanticPage>
 
 </mvc:View>
