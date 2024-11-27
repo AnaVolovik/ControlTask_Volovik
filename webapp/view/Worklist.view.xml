@@ -26,6 +26,16 @@
         id="table"
         rows="{/zjblessons_base_Materials}"
       >
+        <extension>
+          <m:OverflowToolbar>
+            <m:Button
+              icon="{i18n>iPerson}"
+              text="{i18n>btnShowStudent}"
+              type="Emphasized"
+              press="onShowStudent" />
+          </m:OverflowToolbar>
+        </extension>
+
         <columns>
           <Column>
             <m:Label id="MaterialID" text="{i18n>MaterialID}" />

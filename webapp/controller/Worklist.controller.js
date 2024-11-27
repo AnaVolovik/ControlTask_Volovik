@@ -16,7 +16,6 @@ sap.ui.define([
         isBusy: false
       });
       this.setModel(oViewModel, "worklistView");
-
     },
 
     onFilter: function(oEvent) {
@@ -36,6 +35,16 @@ sap.ui.define([
 
       oTable.getBinding('rows').filter(oFilter);
     },
+
+    onShowStudent: function () {
+      const sBoxMessage = this.getResourceBundle().getText("MBoxMessage"),
+            sBoxTitle = this.getResourceBundle().getText("MBoxTitle");
+
+        sap.m.MessageBox.information(sBoxMessage, {
+        title: sBoxTitle,
+        actions: [sap.m.MessageBox.Action.OK]
+      });
+    }
 
 
   });
